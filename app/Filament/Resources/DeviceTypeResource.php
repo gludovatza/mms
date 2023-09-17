@@ -40,11 +40,11 @@ class DeviceTypeResource extends Resource
       ->schema([
         Forms\Components\Section::make()
           ->schema([
-            Forms\Components\TextInput::make('name')->label(__('fields.nev'))
+            Forms\Components\TextInput::make('name')->label(__('fields.name'))
               ->required()
               ->unique(ignoreRecord: true)
               ->maxLength(255),
-            Forms\Components\TextInput::make('note')->label(__('fields.megjegyzes'))
+            Forms\Components\TextInput::make('note')->label(__('fields.note'))
               ->maxLength(255),
           ])
       ]);
@@ -56,7 +56,7 @@ class DeviceTypeResource extends Resource
       ->columns([
         Tables\Columns\TextColumn::make('id')
           ->searchable()->sortable(),
-        Tables\Columns\TextColumn::make('name')->label(__('fields.nev'))
+        Tables\Columns\TextColumn::make('name')->label(__('fields.name'))
           ->searchable()->sortable(),
         Tables\Columns\TextColumn::make('created_at')->label(__('fields.created_at'))
           ->dateTime('Y-m-d H:i')
@@ -81,7 +81,7 @@ class DeviceTypeResource extends Resource
   public static function getRelations(): array
   {
     return [
-      //
+        RelationManagers\DevicesRelationManager::class,
     ];
   }
 

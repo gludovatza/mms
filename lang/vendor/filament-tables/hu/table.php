@@ -1,6 +1,9 @@
 <?php
 
 return [
+'column_toggle' => [
+  'heading' => 'Oszlopok',
+],
 
     'columns' => [
 
