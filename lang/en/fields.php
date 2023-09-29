@@ -14,4 +14,5 @@ return [
     'inactive' => 'Inactive',
     'all' => 'All',
     'qr_code' => 'QR code',
+    'attachment' => 'Attachment',
 ];
