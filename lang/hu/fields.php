@@ -15,4 +15,8 @@ return [
   'all' => 'Mind',
   'qr_code' => 'QR kód',
   'attachment' => 'Csatolt fájl',
+  'email' => 'E-mail cím',
+  'password' => 'Jelszó',
+  'new_password' => 'Új Jelszó',
+  'deleted_at' => 'Törölve',
 ];
