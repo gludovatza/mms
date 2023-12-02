@@ -9,25 +9,30 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Device extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'erp_code',
-        'type_id',
-        'plant',
-        'active',
-        'history',
-        'note'
-    ];
+  protected $fillable = [
+    'name',
+    'erp_code',
+    'type_id',
+    'plant',
+    'active',
+    'history',
+    'note'
+  ];
 
-    public function type(): BelongsTo
-    {
-        return $this->belongsTo(DeviceType::class, 'type_id');
-    }
+  public function type(): BelongsTo
+  {
+    return $this->belongsTo(DeviceType::class, 'type_id');
+  }
 
-    public function documents(): HasMany
-    {
-        return $this->hasMany(Document::class);
-    }
+  public function documents(): HasMany
+  {
+    return $this->hasMany(Document::class);
+  }
+
+  public function worksheets(): HasMany
+  {
+    return $this->hasMany(Worksheet::class);
+  }
 }

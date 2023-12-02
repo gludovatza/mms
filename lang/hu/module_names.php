@@ -4,6 +4,7 @@ return [
   'navigation_groups' => [
     'administration' => 'Adminisztráció',
     'maintenance' => 'Karbantartás',
+    'failure_report' => 'Hibabejelentés',
   ],
   'device_types' => [
     'label' => 'Berendezés típus',
@@ -32,5 +33,10 @@ return [
   ],
   'widgets' => [
     'usersbyroles' => 'Felhasználók szerepkörök szerint',
+  ],
+
+  'worksheets' => [
+    'label' => 'Munkalap',
+    'plural_label' => 'Munkalapok',
   ],
 ];

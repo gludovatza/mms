@@ -4,6 +4,7 @@ return [
   'navigation_groups' => [
     'administration' => 'Administration',
     'maintenance' => 'Maintenance',
+    'failure_report' => 'Failure report',
   ],
   'device_types' => [
     'label' => 'Device type',
@@ -32,5 +33,10 @@ return [
   ],
   'widgets' => [
     'usersbyroles' => 'Users by role',
+  ],
+
+  'worksheets' => [
+    'label' => 'Worksheet',
+    'plural_label' => 'Worksheets',
   ],
 ];

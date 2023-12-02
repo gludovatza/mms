@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -52,5 +53,15 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         return str_ends_with($this->email, '@admin.hu');
+    }
+
+    public function creators_worksheets(): HasMany
+    {
+        return $this->hasMany(Worksheet::class, 'creator_id');
+    }
+
+    public function repairers_worksheets(): HasMany
+    {
+        return $this->hasMany(Worksheet::class, 'repairer_id');
     }
 }
