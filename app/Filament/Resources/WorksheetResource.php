@@ -186,9 +186,11 @@ class WorksheetResource extends Resource
     ];
   }
 
-  //   public static function getEloquentQuery(): Builder
-  //   {
-  //     if( ! auth()->user()->can('update worksheets') )
-  //       return parent::getEloquentQuery()->where('creator_id', auth()->user()->id);
-  //   }
+  public static function getEloquentQuery(): Builder
+  {
+    if (!auth()->user()->can('update worksheets')) {
+      return parent::getEloquentQuery()->where('creator_id', auth()->user()->id);
+    }
+    return parent::getEloquentQuery();
+  }
 }
