@@ -54,7 +54,7 @@ class WorksheetResource extends Resource
             ->disabled(!auth()->user()->can('update worksheets') ? true : false)
             ->required(),
           Forms\Components\Select::make('repairer_id')->label(__('fields.repairer'))
-            ->options(User::role('repairer')->get()->pluck('name', 'id'))
+            ->options(User::role('karbantartó')->get()->pluck('name', 'id'))
             ->disabled(!auth()->user()->can('update worksheets')),
           Forms\Components\Select::make('priority')->label(__('fields.priority'))
             ->options(WorksheetPriority::class)
