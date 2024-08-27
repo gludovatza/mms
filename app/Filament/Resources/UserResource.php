@@ -55,7 +55,7 @@ class UserResource extends Resource
           Forms\Components\TextInput::make('password')
             ->password()
             ->maxLength(255)
-            ->required(static fn (Page $livewire): string => $livewire instanceof CreateUser,)
+            ->required(static fn (Page $livewire): string => $livewire instanceof CreateUser)
             ->dehydrateStateUsing(
               fn (?string $state): ?string =>
               filled($state) ? Hash::make($state) : null
@@ -79,6 +79,7 @@ class UserResource extends Resource
   public static function table(Table $table): Table
   {
     return $table
+      ->striped()
       ->columns([
         Tables\Columns\TextColumn::make('name')->label(__('fields.name'))
           ->sortable()

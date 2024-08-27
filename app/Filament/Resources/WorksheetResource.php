@@ -106,7 +106,8 @@ class WorksheetResource extends Resource
   public static function table(Table $table): Table
   {
     return $table
-      ->defaultSort('created_at', 'desc')
+      ->defaultSort('id', 'desc')
+      ->striped()
       ->columns([
         Tables\Columns\TextColumn::make('id')
           ->searchable()
